@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 
-//возведение в степень
+//возведение в степень итеративное
 double pow_iter(double a, long b) {
 	long double res = 1;
 	for (long i = 1; i <= b; i++) {
