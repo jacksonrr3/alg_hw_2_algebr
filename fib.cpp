@@ -3,8 +3,7 @@
 #include <algorithm>
 #include "pow.h"
 
-
-//ïîèñê n-ãî ÷èñëà Ôèáîíà÷è ÷åðåç ðåêóðñèþ.
+//поиск n-го числа Фибоначи через рекурсию.
 double fib_rec(size_t n) {
 	if (n <= 2) { return 1; }
 	else { return fib_rec(n - 1) + fib_rec(n - 2); }
