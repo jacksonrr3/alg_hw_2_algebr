@@ -14,8 +14,8 @@ void test_pow(double(*f)(double, long), const std::string& s, double d, long l) 
 		(end - start).count() << " ms)" << std::endl;
 }
 
-//ôóíêöèÿ òåñòèðîâàíèÿ è îïðåäåëåíèÿ âðåìåíè ðàáîòû àëãîðèòìîâ ïîèñêà ÷èñëà Ôèáîíà÷÷è
-//âûâîäèò íà ýêðàí íàçâàíèå ôóíêöèè âîçâåäåíèÿ â ñòåïåíü, àðãóìåíòû, ðåçóëüòàò è âðåìÿ ðàáîòû.
+//функция тестирования и определения времени работы алгоритмов поиска числа Фибоначчи
+//выводит на экран название функции возведения в степень, аргументы, результат и время работы.
 void test_fib(double (*f)(size_t), const std::string& s, size_t n) {
 	std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
 	start = std::chrono::high_resolution_clock::now();
@@ -32,9 +32,9 @@ int main() {
 	std::string s2 = "pow_2step";
 	std::string s3 = "pow_bin";
 
-	test_pow(pow_iter, s1, 1.0000001, 1000000000);			 //2.6881e+43,    3853 ìñ
-	test_pow(pow_2step, s2, 1.0000001, 1000000000);			 //2.6881e+43,    1654 ìñ
-	test_pow(pow_bin<double>, s3, 1.0000001, 1000000000);    //2.6881e+43,    0 ìñ
+	test_pow(pow_iter, s1, 1.0000001, 1000000000);			 //2.6881e+43,    3853 мс
+	test_pow(pow_2step, s2, 1.0000001, 1000000000);			 //2.6881e+43,    1654 мс
+	test_pow(pow_bin<double>, s3, 1.0000001, 1000000000);    //2.6881e+43,    0 мс
 	
 	std::string s4 = "fib_rec";
 	std::string s5 = "fib_rec_upgrade";
@@ -42,11 +42,11 @@ int main() {
 	std::string s7 = "fib_gold";
 	std::string s8 = "fib_matrix";
 
-	test_fib(fib_rec, s4, 42);          //2.67914e+08, 10569 ìñ
-	test_fib(fib_rec_upgrade, s5, 42);	//2.67914e+08, 10338 ìñ 
-	test_fib(fib_iter, s6, 1001);		//7.03304e+208, 0 ìñ
-	test_fib(fib_gold, s7, 1001);		//7.03304e+208, 0 ìñ
-	test_fib(fib_matrix, s8, 1001);		//7.03304e+208, 0 ìñ
+	test_fib(fib_rec, s4, 42);          //2.67914e+08, 10569 мс
+	test_fib(fib_rec_upgrade, s5, 42);	//2.67914e+08, 10338 мс 
+	test_fib(fib_iter, s6, 1001);		//7.03304e+208, 0 мс
+	test_fib(fib_gold, s7, 1001);		//7.03304e+208, 0 мс
+	test_fib(fib_matrix, s8, 1001);		//7.03304e+208, 0 мс
 	
 	return 0;
 }
