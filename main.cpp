@@ -3,8 +3,8 @@
 #include "fib.h"
 #include "pow.h"
 
-//функция тестирования и определения времени работы алгоритмов возведения в степень
-//выводит на экран название функции возведения в степень, аргументы, результат и время работы.
+//С„СѓРЅРєС†РёСЏ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ Рё РѕРїСЂРµРґРµР»РµРЅРёСЏ РІСЂРµРјРµРЅРё СЂР°Р±РѕС‚С‹ Р°Р»РіРѕСЂРёС‚РјРѕРІ РІРѕР·РІРµРґРµРЅРёСЏ РІ СЃС‚РµРїРµРЅСЊ
+//РІС‹РІРѕРґРёС‚ РЅР° СЌРєСЂР°РЅ РЅР°Р·РІР°РЅРёРµ С„СѓРЅРєС†РёРё РІРѕР·РІРµРґРµРЅРёСЏ РІ СЃС‚РµРїРµРЅСЊ, Р°СЂРіСѓРјРµРЅС‚С‹, СЂРµР·СѓР»СЊС‚Р°С‚ Рё РІСЂРµРјСЏ СЂР°Р±РѕС‚С‹.
 void test_pow(double(*f)(double, long), const std::string& s, double d, long l) {
 	std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
 	start = std::chrono::high_resolution_clock::now();
@@ -14,8 +14,8 @@ void test_pow(double(*f)(double, long), const std::string& s, double d, long l) 
 		(end - start).count() << " ms)" << std::endl;
 }
 
-//функция тестирования и определения времени работы алгоритмов поиска числа Фибоначчи
-//выводит на экран название функции возведения в степень, аргументы, результат и время работы.
+//ГґГіГ­ГЄГ¶ГЁГї ГІГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГї ГЁ Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­ГЁГї ГўГ°ГҐГ¬ГҐГ­ГЁ Г°Г ГЎГ®ГІГ» Г Г«ГЈГ®Г°ГЁГІГ¬Г®Гў ГЇГ®ГЁГ±ГЄГ  Г·ГЁГ±Г«Г  Г”ГЁГЎГ®Г­Г Г·Г·ГЁ
+//ГўГ»ГўГ®Г¤ГЁГІ Г­Г  ГЅГЄГ°Г Г­ Г­Г Г§ГўГ Г­ГЁГҐ ГґГіГ­ГЄГ¶ГЁГЁ ГўГ®Г§ГўГҐГ¤ГҐГ­ГЁГї Гў Г±ГІГҐГЇГҐГ­Гј, Г Г°ГЈГіГ¬ГҐГ­ГІГ», Г°ГҐГ§ГіГ«ГјГІГ ГІ ГЁ ГўГ°ГҐГ¬Гї Г°Г ГЎГ®ГІГ».
 void test_fib(double (*f)(size_t), const std::string& s, size_t n) {
 	std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
 	start = std::chrono::high_resolution_clock::now();
@@ -32,9 +32,9 @@ int main() {
 	std::string s2 = "pow_2step";
 	std::string s3 = "pow_bin";
 
-	test_pow(pow_iter, s1, 1.0000001, 1000000000);			 //2.6881e+43,    3853 мс
-	test_pow(pow_2step, s2, 1.0000001, 1000000000);			 //2.6881e+43,    1654 мс
-	test_pow(pow_bin<double>, s3, 1.0000001, 1000000000);    //2.6881e+43,    0 мс
+	test_pow(pow_iter, s1, 1.0000001, 1000000000);			 //2.6881e+43,    3853 Г¬Г±
+	test_pow(pow_2step, s2, 1.0000001, 1000000000);			 //2.6881e+43,    1654 Г¬Г±
+	test_pow(pow_bin<double>, s3, 1.0000001, 1000000000);    //2.6881e+43,    0 Г¬Г±
 	
 	std::string s4 = "fib_rec";
 	std::string s5 = "fib_rec_upgrade";
@@ -42,11 +42,11 @@ int main() {
 	std::string s7 = "fib_gold";
 	std::string s8 = "fib_matrix";
 
-	test_fib(fib_rec, s4, 42);          //2.67914e+08, 10569 мс
-	test_fib(fib_rec_upgrade, s5, 42);	//2.67914e+08, 10338 мс 
-	test_fib(fib_iter, s6, 1001);		//7.03304e+208, 0 мс
-	test_fib(fib_gold, s7, 1001);		//7.03304e+208, 0 мс
-	test_fib(fib_matrix, s8, 1001);		//7.03304e+208, 0 мс
+	test_fib(fib_rec, s4, 42);          //2.67914e+08, 10569 Г¬Г±
+	test_fib(fib_rec_upgrade, s5, 42);	//2.67914e+08, 10338 Г¬Г± 
+	test_fib(fib_iter, s6, 1001);		//7.03304e+208, 0 Г¬Г±
+	test_fib(fib_gold, s7, 1001);		//7.03304e+208, 0 Г¬Г±
+	test_fib(fib_matrix, s8, 1001);		//7.03304e+208, 0 Г¬Г±
 	
 	return 0;
 }
